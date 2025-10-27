@@ -18,21 +18,23 @@
   
   The Arduino Nicla Voice's ADC pins (like A0) can only safely read a maximum of 1.8V.
   
-  The supercapacitor will be charged to 4.3V or more, which will
+  The supercapacitor will be charged to 5.5V , which will
   **INSTANTLY DESTROY** the Arduino board if connected directly to an analog pin.
   
   We **MUST** use a VOLTAGE DIVIDER to read the voltage safely.
   
-  A 1:3 voltage divider with a 20k-ohm (R_TOP) and 10k-ohm (R_BOTTOM) resistor will
-  divide the voltage by 3, bringing it into a safe range (4.3V becomes ~1.43V).
+  A 1:4 voltage divider with a 30k-ohm (R_TOP) and 10k-ohm (R_BOTTOM) resistor will
+  divide the voltage by 4, bringing it into a safe range.
+  
+  WORST-CASE (5.5V): 5.5V / 4 = 1.375V (which is safely below 1.8V)
   
   Connections:
   
-  (Supercap +) ---- [ R_TOP (20k) ] ---- (A0 Pin) ---- [ R_BOTTOM (10k) ] ---- (GND)
+  (Supercap +) ---- [ R_TOP (30k) ] ---- (A0 Pin) ---- [ R_BOTTOM (10k) ] ---- (GND)
   
   
-  This code assumes having this 1:3 voltage divider in place.
-  It multiplies the measured voltage by 3 (the VOLTAGE_DIVIDER_FACTOR) to get the real value.
+  This code assumes having this 1:4 voltage divider in place.
+  It multiplies the measured voltage by 4 (the VOLTAGE_DIVIDER_FACTOR) to get the real value.
 
   ================================================================================
 */
@@ -52,7 +54,7 @@ const float ADC_REFERENCE_VOLTAGE = 3.3;
 
 // --- Voltage Divider Resistors ---
 // Define the resistor values used in the voltage divider circuit.
-const float R_TOP = 20000.0; // The "top" resistor from (Supercap +) to (A0 Pin)
+const float R_TOP = 30000.0; // The "top" resistor from (Supercap +) to (A0 Pin)
 const float R_BOTTOM = 10000.0; // The "bottom" resistor from (A0 Pin) to (GND)
 
 // The multiplication factor from our voltage divider.
