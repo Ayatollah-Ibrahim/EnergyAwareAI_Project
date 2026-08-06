@@ -1,0 +1,38 @@
+[
+  {
+    "policy_name": "PPO Agent",
+    "policy_type": "ppo",
+    "mean_inference_time": 0.08698198077036068,
+    "std_inference_time": 0.03238805111801406,
+    "min_inference_time": 0.06283301627263427,
+    "max_inference_time": 0.25949999690055847,
+    "median_inference_time": 0.07004197686910629,
+    "p95_inference_time": 0.15321306709665805,
+    "decisions_per_second": 11496.634028605065,
+    "total_flops": 160278,
+    "flops_per_decision": 160278,
+    "model_parameters": 157708,
+    "model_size_mb": 0.6079835891723633,
+    "peak_memory_mb": 0.0,
+    "n_measurements": 2000,
+    "device": "cpu"
+  },
+  {
+    "policy_name": "DQN Agent",
+    "policy_type": "dqn",
+    "mean_inference_time": 0.036208251694915816,
+    "std_inference_time": 0.0010918821637545067,
+    "min_inference_time": 0.030750001315027475,
+    "max_inference_time": 0.044082989916205406,
+    "median_inference_time": 0.0357080134563148,
+    "p95_inference_time": 0.038002050132490695,
+    "decisions_per_second": 27618.013938530345,
+    "total_flops": 300398,
+    "flops_per_decision": 300398,
+    "model_parameters": 150199,
+    "model_size_mb": 0.5778264999389648,
+    "peak_memory_mb": 0.0,
+    "n_measurements": 2000,
+    "device": "cpu"
+  }
+]

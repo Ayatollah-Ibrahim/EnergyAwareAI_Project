@@ -1,0 +1,46 @@
+{
+  "unwrapped": {
+    "policy_name": "Policy",
+    "n_episodes": 100,
+    "mean_reward": 613.790564205804,
+    "std_reward": 383.6305862705505,
+    "median_reward": 568.4248049996122,
+    "min_reward": 41.026586351187845,
+    "max_reward": 1321.8189313504354,
+    "mean_delivery_rate": 0.7524442503099164,
+    "std_delivery_rate": 0.1259366176661129,
+    "mean_energy_efficiency": 3.0125660040910884,
+    "mean_battery_final": 0.16863584610832683,
+    "completion_rate": 0.35,
+    "mean_images_transmitted": 4017.19,
+    "wrapper_stats": null,
+    "is_wrapped": false
+  },
+  "wrapped": {
+    "policy_name": "PPOAgent (Wrapped)",
+    "n_episodes": 100,
+    "mean_reward": 778.811852937637,
+    "std_reward": 262.85789997632065,
+    "median_reward": 834.5954555340743,
+    "min_reward": 7.812858920976755,
+    "max_reward": 1344.2344203970842,
+    "mean_delivery_rate": 0.695981570140098,
+    "std_delivery_rate": 0.12701151421695053,
+    "mean_energy_efficiency": 5.447684809243527,
+    "mean_battery_final": 0.6178704783295522,
+    "completion_rate": 1.0,
+    "mean_images_transmitted": 5012.84,
+    "wrapper_stats": {
+      "total_calls": 144000,
+      "failures": 0,
+      "completions": 54861,
+      "battery_overrides": 54861,
+      "validation_fixes": 0,
+      "failure_rate": 0.0,
+      "completion_rate": 0.38097916666666665,
+      "battery_override_rate": 0.38097916666666665,
+      "validation_fix_rate": 0.0
+    },
+    "is_wrapped": true
+  }
+}
