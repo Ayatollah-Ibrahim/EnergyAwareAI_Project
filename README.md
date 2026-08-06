@@ -180,7 +180,6 @@ Progressive difficulty: event rate 0.1→0.3, initial battery 70K J→10K J
 
 **Warm-start**: Network weights carry over between stages
 
-![Curriculum Training Progress](https://github.com/Ayatollah-Ibrahim/EnergyAwareAI_Project/raw/main/assets/curriculum_training.png)
 
 ### Safety Wrapper
 - Predicts energy cost of each action
@@ -188,7 +187,6 @@ Progressive difficulty: event rate 0.1→0.3, initial battery 70K J→10K J
 - Fallback hierarchy: TX → inference → capture → sleep
 - **Result**: 100% episode completion (zero crashes), -6pp delivery cost for safety
 
-![Wrapped vs Unwrapped Policy](https://github.com/Ayatollah-Ibrahim/EnergyAwareAI_Project/raw/main/assets/wrapped_vs_unwrapped.png)
 
 ### Transfer Learning
 Train on Jetson Nano, fine-tune on Raspberry Pi in 10–50 episodes with LR=1×10⁻⁵  
