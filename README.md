@@ -82,7 +82,7 @@ EnergyHarvestingRL/
 
 ### Pipeline Overview
 
-![System Overview](https://raw.githubusercontent.com/Ayatollah-Ibrahim/EnergyAwareAI_Project/main/assets/System_Overview.png)
+![System Overview](https://github.com/Ayatollah-Ibrahim/EnergyAwareAI_Project/raw/main/assets/System_Overview.png)
 
 ```
 Solar Input → Environment → Observation (44D) → PPO Agent → Action
@@ -180,7 +180,7 @@ Progressive difficulty: event rate 0.1→0.3, initial battery 70K J→10K J
 
 **Warm-start**: Network weights carry over between stages
 
-![Curriculum Training Progress](https://raw.githubusercontent.com/Ayatollah-Ibrahim/EnergyAwareAI_Project/main/assets/curriculum_training.png)
+![Curriculum Training Progress](https://github.com/Ayatollah-Ibrahim/EnergyAwareAI_Project/raw/main/assets/curriculum_training.png)
 
 ### Safety Wrapper
 - Predicts energy cost of each action
@@ -188,13 +188,13 @@ Progressive difficulty: event rate 0.1→0.3, initial battery 70K J→10K J
 - Fallback hierarchy: TX → inference → capture → sleep
 - **Result**: 100% episode completion (zero crashes), -6pp delivery cost for safety
 
-![Wrapped vs Unwrapped Policy](https://raw.githubusercontent.com/Ayatollah-Ibrahim/EnergyAwareAI_Project/main/assets/wrapped_vs_unwrapped.png)
+![Wrapped vs Unwrapped Policy](https://github.com/Ayatollah-Ibrahim/EnergyAwareAI_Project/raw/main/assets/wrapped_vs_unwrapped.png)
 
 ### Transfer Learning
 Train on Jetson Nano, fine-tune on Raspberry Pi in 10–50 episodes with LR=1×10⁻⁵  
 **Speedup**: 50× faster (50 episodes vs. 500+)
 
-![Transfer Learning Convergence](https://raw.githubusercontent.com/Ayatollah-Ibrahim/EnergyAwareAI_Project/main/assets/transfer_learning.png)
+![Transfer Learning Convergence](https://github.com/Ayatollah-Ibrahim/EnergyAwareAI_Project/raw/main/assets/transfer_learning.png)
 
 ---
 
@@ -266,7 +266,7 @@ evaluator.export_to_csv("results/metrics.csv")
 
 PPO decision: **0.087 ms** (negligible vs. 60-second epoch)
 
-![Computational Comparison Across Policies](https://raw.githubusercontent.com/Ayatollah-Ibrahim/EnergyAwareAI_Project/main/assets/computational_comparison.png)
+![Computational Comparison Across Policies](https://github.com/Ayatollah-Ibrahim/EnergyAwareAI_Project/raw/main/assets/computational_comparison.png)
 
 ### Diagnostics
 
@@ -331,7 +331,7 @@ Both achieve >70% delivery with 100% system reliability.
   - Inference: 1,476 mJ (simple), 2,448 mJ (complex)
   - TX: 56.52 J/image (cellular)
 
-![Processing Duration by Operation and Platform](https://raw.githubusercontent.com/Ayatollah-Ibrahim/EnergyAwareAI_Project/main/assets/processing_duration.png)
+![Processing Duration by Operation and Platform](https://github.com/Ayatollah-Ibrahim/EnergyAwareAI_Project/raw/main/assets/processing_duration.png)
 
 ### Custom Hardware
 
