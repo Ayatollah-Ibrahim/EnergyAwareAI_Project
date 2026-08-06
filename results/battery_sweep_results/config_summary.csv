@@ -1,0 +1,6 @@
+config,mean_reward_mean,mean_reward_std,mean_reward_max,delivery_rate_mean,delivery_rate_std,delivery_rate_max,completion_rate_mean,completion_rate_std,completion_rate_max
+buffer_minimal,-1026.758,1535.843,829.592,0.565,0.261,0.777,0.793,0.319,1.0
+buffer_small,-1021.296,1536.512,800.172,0.555,0.258,0.781,0.792,0.319,1.0
+buffer_large,-1142.975,1478.981,793.607,0.45,0.255,0.779,0.792,0.32,1.0
+buffer_xlarge,-1182.9,1399.049,789.204,0.397,0.292,0.776,0.792,0.32,1.0
+buffer_medium,-1001.427,1488.395,787.967,0.531,0.25,0.78,0.792,0.32,1.0
