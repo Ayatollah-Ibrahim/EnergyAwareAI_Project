@@ -1,7 +1,6 @@
 # Energy-Harvesting Edge Vision Systems via Reinforcement Learning
 
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue)](https://www.python.org/downloads/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Status: Under Review](https://img.shields.io/badge/Status-Under%20Review-orange)](https://github.com/TODO)
 
 **A unified RL framework for autonomous energy-aware camera control on energy-harvesting IoT devices. Jointly optimizes capture frequency, inference complexity, and transmission to maximize event detection under stochastic power constraints.**
@@ -326,19 +325,6 @@ Run `python scripts/train.py --mode diagnose` to validate
 
 ---
 
-## Future Work
-
-- **Online Curriculum Adaptation**: Auto-adjust difficulty based on agent performance
-- **Hierarchical RL**: Separate energy allocation (high-level) from scheduling (low-level)
-- **Federated Learning**: Distribute training across multiple edge devices
-- **Meta-Learning**: Learn-to-learn for hardware transfer without fine-tuning
-- **Hybrid Control**: Combine MPC (long-horizon) + PPO (reactive)
-- **Real Hardware**: Deploy on Jetson + solar testbed with live solar traces
-- **Multi-Agent**: Networked cameras with energy trading
-- **Online Safety**: Continual on-device learning with safety guarantees
-- **Inverse RL**: Infer deployment objectives from user preferences
-- **Sim-to-Real**: Domain randomization for real-world robustness
-
 ## Troubleshooting
 
 | Issue | Solution |
@@ -366,7 +352,7 @@ This work is currently under peer review. For now, please cite as a preprint:
             Etman, Abdallah and Zewail, Rami and 
             Inoue, Koji and Sayed, Mohammed},
   year = {2026},
-  howpublished = {\url{https://github.com/TODO}},
+  howpublished = {\url{https://github.com/Ayatollah-Ibrahim/EnergyAwareAI_Project}},
   note = {Under peer review}
 }
 ```
@@ -375,18 +361,6 @@ Preprint and publication links will be added upon acceptance.
 
 ---
 
-## License
-
-MIT License – See [LICENSE](LICENSE) for details. Free for academic and commercial use with attribution.
-
----
-
-## Acknowledgements
-
-**Authors**:
-- Ayatollah Elkolally (Egypt-Japan University of Science & Technology)
-- Anas Dorgham, Abdallah Etman, Rami Zewail, Mohammed Sayed (EJUST)
-- Koji Inoue (Kyushu University)
 
 **Data & Resources**:
 - Solar irradiance data: [NREL Solar Radiation Database (NSRDB)](https://nsrdb.nrel.gov/)
@@ -396,12 +370,4 @@ MIT License – See [LICENSE](LICENSE) for details. Free for academic and commer
 **Funding & Institutional Support**: 
 Egypt-Japan University of Science & Technology, Department of Computer Science & Engineering and Department of Electronics & Communications Engineering.
 
----
 
-<div align="center">
-
-### ⭐ Found this useful? Please consider starring the repository!
-
-For questions or issues, please [open a GitHub issue](https://github.com/TODO).
-
-</div>
