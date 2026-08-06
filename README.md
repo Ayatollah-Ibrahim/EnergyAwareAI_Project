@@ -1,9 +1,11 @@
 # Energy-Harvesting Edge Vision Systems via Reinforcement Learning
 
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue)](https://www.python.org/downloads/)
-[![Status: Under Review](https://img.shields.io/badge/Status-Under%20Review-orange)](https://github.com/TODO)
+[![Status: Under Review](https://img.shields.io/badge/Status-Under%20Review-orange)](https://github.com/Ayatollah-Ibrahim/EnergyAwareAI_Project)
 
 **A unified RL framework for autonomous energy-aware camera control on energy-harvesting IoT devices. Jointly optimizes capture frequency, inference complexity, and transmission to maximize event detection under stochastic power constraints.**
+
+---
 
 ## Overview
 
@@ -55,6 +57,7 @@ EnergyHarvestingRL/
 │       ├── diagnostics.py          # Preflight checks
 │       ├── computational_benchmark.py
 │       └── statistics.py
+├── assets/                         # Figures for documentation
 ├── checkpoints/                    # Trained models
 ├── results/                        # Evaluation outputs (CSV, JSON, plots)
 └── requirements.txt
@@ -78,6 +81,8 @@ EnergyHarvestingRL/
 ## System Architecture
 
 ### Pipeline Overview
+
+![System Overview](assets/System_Overview.png)
 
 ```
 Solar Input → Environment → Observation (44D) → PPO Agent → Action
@@ -175,15 +180,23 @@ Progressive difficulty: event rate 0.1→0.3, initial battery 70K J→10K J
 
 **Warm-start**: Network weights carry over between stages
 
+![Curriculum Training Progress](assets/curriculum_training.png)
+
 ### Safety Wrapper
 - Predicts energy cost of each action
 - Overrides actions that would deplete battery below `B_min`
 - Fallback hierarchy: TX → inference → capture → sleep
-- **Result**: 100% episode completion (zero crashes), -6pp delivery for safety
+- **Result**: 100% episode completion (zero crashes), -6pp delivery cost for safety
+
+![Wrapped vs Unwrapped Policy](assets/wrapped_vs_unwrapped.png)
 
 ### Transfer Learning
-Train on Jetson Nano, fine-tune on Raspberry Pi in 10-50 episodes with LR=1×10⁻⁵
-- **Speedup**: 50× faster (50 episodes vs. 500+)
+Train on Jetson Nano, fine-tune on Raspberry Pi in 10–50 episodes with LR=1×10⁻⁵  
+**Speedup**: 50× faster (50 episodes vs. 500+)
+
+![Transfer Learning Convergence](assets/transfer_learning.png)
+
+---
 
 ## Training Pipeline
 
@@ -197,6 +210,8 @@ curriculum = create_curriculum_stages(params, num_stages=6)
 **Checkpoints**: Auto-saved every 100 episodes to `checkpoints/stage_{N}/ckpt_{step}.pth`
 
 **Logging**: Real-time CSV with episode, reward, delivery_rate, battery_min, entropy, loss
+
+---
 
 ## Baselines
 
@@ -217,7 +232,9 @@ All baselines evaluated under identical conditions (same environment, solar trac
 
 **MPC**: Assumes ideal energy forecasts; fails on real transient clouds
 
-**Max Throughput**: Lesson—ignoring energy constraints = catastrophic system failure
+**Max Throughput**: Lesson — ignoring energy constraints = catastrophic system failure
+
+---
 
 ## Evaluation
 
@@ -245,6 +262,12 @@ evaluator.export_to_csv("results/metrics.csv")
 | **Energy Efficiency** | Energy per delivered event |
 | **Buffer Utilization** | Peak buffer occupancy (%) |
 
+### Computational Overhead
+
+PPO decision: **0.087 ms** (negligible vs. 60-second epoch)
+
+![Computational Comparison Across Policies](assets/computational_comparison.png)
+
 ### Diagnostics
 
 ```bash
@@ -253,9 +276,7 @@ python scripts/train.py --mode diagnose
 
 Validates: GHI data, energy model consistency, curriculum, observation/action dimensions, reward clipping, safety wrapper, GPU/CPU availability
 
-### Computational Overhead
-
-PPO decision: **0.087 ms** (negligible vs. 60-second epoch)
+---
 
 ## Experimental Results
 
@@ -272,11 +293,11 @@ PPO decision: **0.087 ms** (negligible vs. 60-second epoch)
 
 4. **Transfer Learning**: 50× speedup (500 episodes → 50 episodes) when fine-tuning Jetson→Raspberry Pi
 
-5. **Learned Energy Hierarchy**: 
+5. **Learned Energy Hierarchy**:
    - High battery: high capture + complex inference + full TX
    - Medium: low capture + simple inference + results-only
    - Low: all off (deep sleep)
-   - *No explicit rules coded—discovered autonomously*
+   - *No explicit rules coded — discovered autonomously*
 
 ### Hardware Comparison
 
@@ -285,7 +306,9 @@ PPO decision: **0.087 ms** (negligible vs. 60-second epoch)
 | Jetson Nano | 804 | 82.6% | 100% |
 | Raspberry Pi 3 | 22 | 71.8% | 100% |
 
-Both achieve >70% delivery with 100% system reliability
+Both achieve >70% delivery with 100% system reliability.
+
+---
 
 ## Hardware Platforms
 
@@ -308,9 +331,11 @@ Both achieve >70% delivery with 100% system reliability
   - Inference: 1,476 mJ (simple), 2,448 mJ (complex)
   - TX: 56.52 J/image (cellular)
 
+![Processing Duration by Operation and Platform](assets/processing_duration.png)
+
 ### Custom Hardware
 
-Profile subsystem energy with power monitor (INA219/INA3221), then:
+Profile subsystem energy with a power monitor (INA219/INA3221), then:
 
 ```python
 from src.env.core import SystemParameters
@@ -321,7 +346,7 @@ params = SystemParameters(
 )
 ```
 
-Run `python scripts/train.py --mode diagnose` to validate
+Run `python scripts/train.py --mode diagnose` to validate.
 
 ---
 
@@ -361,13 +386,10 @@ Preprint and publication links will be added upon acceptance.
 
 ---
 
-
 **Data & Resources**:
 - Solar irradiance data: [NREL Solar Radiation Database (NSRDB)](https://nsrdb.nrel.gov/)
 - Wildlife events: [Snapshot Serengeti](https://www.zooniverse.org/projects/snapshot-kenya/snapshot-serengeti)
 - RL algorithms: [OpenAI Spinning Up](https://spinningup.openai.com/)
 
-**Funding & Institutional Support**: 
+**Funding & Institutional Support**:  
 Egypt-Japan University of Science & Technology, Department of Computer Science & Engineering and Department of Electronics & Communications Engineering.
-
-
