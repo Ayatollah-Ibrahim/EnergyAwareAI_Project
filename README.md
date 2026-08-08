@@ -217,7 +217,7 @@ All baselines evaluated under identical conditions (same environment, solar trac
 
 | Policy | Reward | Delivery | Completion | Notes |
 |--------|--------|----------|-----------|-------|
-| **PPO (safe)** | **804** | **82.6%** | **100%** | ✅ Learned, safe |
+| **PPO (safe)** | **804** | **82.6%** | **100%** | Learned, safe |
 | Smart Heuristic | 696 | 79.1% | 100% | Best hand-crafted |
 | DQN (safe) | 245 | 61.7% | 100% | Q-value instability |
 | MPC (3-step) | -52 | 58.3% | 12.4% | Forecast errors |
@@ -287,7 +287,7 @@ Validates: GHI data, energy model consistency, curriculum, observation/action di
 3. **Safety Wrapper Trade-off**:
    - Unwrapped: 82.8% delivery, 36.5% completion (crashes)
    - Wrapped: 82.6% delivery, 100% completion
-   - Cost: -0.2pp delivery for guaranteed safety ✅
+   - Cost: -0.2pp delivery for guaranteed safety 
 
 4. **Transfer Learning**: 50× speedup (500 episodes → 50 episodes) when fine-tuning Jetson→Raspberry Pi
 
