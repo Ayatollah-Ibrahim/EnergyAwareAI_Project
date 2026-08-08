@@ -384,10 +384,6 @@ Preprint and publication links will be added upon acceptance.
 
 ---
 
-**Data & Resources**:
-- Solar irradiance data: [NREL Solar Radiation Database (NSRDB)](https://nsrdb.nrel.gov/)
-- Wildlife events: [Snapshot Serengeti](https://www.zooniverse.org/projects/snapshot-kenya/snapshot-serengeti)
-- RL algorithms: [OpenAI Spinning Up](https://spinningup.openai.com/)
 
 **Funding & Institutional Support**:  
 Egypt-Japan University of Science & Technology, Department of Computer Science & Engineering and Department of Electronics & Communications Engineering.
